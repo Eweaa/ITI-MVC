@@ -1,0 +1,52 @@
+﻿@model IEnumerable<Department>
+
+<h1>Departments</h1>
+
+<div style="display: flex; flex-direction: row-reverse" class="mb-3">
+    <a asp-controller="Department" asp-action="DepartmentForm" class="btn btn-primary">Create Department</a>
+</div>
+
+<table class="table table-bordered">
+    <tr>
+        @* <th>
+            ID
+        </th> *@
+        
+        <th>
+            Name
+        </th>
+        
+        <th>
+            Options
+        </th>
+
+    </tr>
+
+
+    @if (Model.Count() != 0)
+    {
+        foreach (var dept in Model)
+        {
+            <tr>
+                @* <td>
+                    @dept.ID
+                </td> *@
+
+                <td>
+                    <a asp-controller="Department" asp-action="Details" asp-route-id="@dept.ID">@dept.Name</a>
+                    @* @dept.Name *@
+                </td>
+
+                <td>
+                    <a class="btn btn-warning text-white" asp-controller="Department" asp-action="Update" asp-route-id="@dept.ID">Edit</a>
+                    <a class="btn btn-danger" asp-controller="Department" asp-action="RemoveForm" asp-route-id="@dept.ID">Remove</a>
+                </td>
+            </tr>
+        }
+    }
+    else
+    {
+        <tr colspan="2">No Data Found</tr>
+    }
+
+</table>

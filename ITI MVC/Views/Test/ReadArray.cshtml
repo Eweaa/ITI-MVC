@@ -1,0 +1,31 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+
+
+<form method="post" enctype="multipart/form-data">
+
+    <div class="mb-3">
+        <label for="Name" class="form-label">Name</label>
+        <input type="text" class="form-control" name="arr" id="Name" >
+    </div>
+
+    <div class="mb-3">
+        <label for="Age"  class="form-label">Age</label>
+        <input type="text" class="form-control" name="arr" id="Age">
+    </div>
+    
+    <div class="mb-3">
+        <label for="stdphoto" class="form-label">file</label>
+        <input type="file" class="form-control" name="stdphoto" id="stdphoto">
+    </div>
+
+    <h1>@ViewBag.img</h1>
+
+    <h1>@ViewBag.name</h1>
+
+    <input type="submit" />
+
+</form>

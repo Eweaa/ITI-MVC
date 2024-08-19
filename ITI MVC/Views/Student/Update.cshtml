@@ -1,0 +1,46 @@
+﻿@model Student
+
+<form method="post">
+
+    @* <div class="mb-3">
+        <label for="Id" class="form-label">Id</label>
+        <input type="text" class="form-control" name="Id" id="Id" value="@Model.DepartmentID" disabled>
+    </div> *@
+
+    <div class="mb-3">
+        <label asp-for="Name" class="form-label">Name</label>
+        <input type="text" class="form-control" asp-for="Name">
+    </div>
+    
+    <div class="mb-3">
+        <label asp-for="ImgPath" class="form-label">file</label>
+        <input type="file" class="form-control" asp-for="ImgPath">
+    </div>
+
+
+    <div class="mb-3">
+        <label asp-for="Age" class="form-label">Age</label>
+        <input type="text" class="form-control" asp-for="Age">
+        <span asp-validation-for="Age" class="text-danger"></span>
+    </div>
+
+    <div class="mb-3">
+        <label asp-for="Email" class="form-label">Email Address</label>
+        <input type="email" class="form-control" asp-for="Email">
+        <span asp-validation-for="Email" class="text-danger"></span>
+    </div>
+
+
+    <div class="mb-3">
+        <label asp-for="Phone" class="form-label">Phone Number</label>
+        <input type="text" class="form-control" asp-for="Phone">
+    </div>
+
+    <div class="mb-3">
+        <label asp-for="DepartmentID" class="form-label">Department</label>
+        <select class="form-select" aria-label="Default select example" asp-for="DepartmentID" asp-items="ViewBag.depts"></select>
+    </div>
+
+    <input type="submit" class="btn btn-primary" value="Update"/>
+
+</form>

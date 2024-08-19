@@ -1,0 +1,36 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+
+@model Department
+
+<h1>Edit Courses</h1>
+<form method="post">
+    <div style="display: flex; justify-content: space-between">
+        <div style="display: inline-block; width:45%">
+            <h3 class="mb-2">Courses In Department</h3>
+            <select multiple name="coursestoremove" class="form-select" style="overflow: hidden">
+                @foreach (Course item in Model.Courses)
+                {
+                    <option value="@item.ID">@item.Name</option>
+                }
+            </select>
+
+        </div>
+
+        <div style="display: inline-block; width:45%">
+            <h3 class="mb-2">Courses Not In Department</h3>
+            <select multiple name="coursestoadd" class="form-select" style="overflow: hidden">
+                @foreach (Course item in ViewBag.CoursesNotInDept)
+                {
+                    <option value="@item.ID">@item.Name</option>
+                }
+            </select>
+        </div>
+    </div>
+    <div style="display: flex; flex-direction: row-reverse" class="mt-2">
+        <input type="submit" value="Update" class="btn btn-success"/>
+    </div>
+</form>

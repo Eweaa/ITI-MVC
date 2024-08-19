@@ -1,0 +1,65 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+
+@model Department
+
+<h1>@Model.Name Details</h1>
+
+<div class="container border p-4 rounded">
+    <div style="display:flex; flex-direction:row-reverse">
+        <a class="btn btn-warning text-white" asp-controller="Department" asp-action="EditCourses" asp-route-id="@Model.ID">Edit</a>
+    </div>
+    <h3>Courses In Department</h3>
+    <table class="table table-bordered table-hover">
+        <tr>
+            <th>
+                Name
+            </th>
+
+        </tr>
+
+
+        @if (Model.Courses.Count() != 0)
+        {
+            foreach (var course in Model.Courses)
+            {
+                <tr>
+                    <td>
+                        @course.Name
+                    </td>
+                </tr>
+            }
+        }
+        else
+        {
+            <tr colspan="2">No Data Found</tr>
+        }
+
+    </table>
+
+
+    <h3>Courses Not In Department</h3>
+
+    <table class="table table-bordered table-hover">
+        <tr>
+            <th>
+                Name
+            </th>
+
+        </tr>
+
+
+        @foreach (Course course in ViewBag.CoursesNotInDept)
+        {
+
+            <tr>
+                <td>
+                    @course.Name
+                </td>
+            </tr>
+        }
+    </table>
+</div>

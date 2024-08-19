@@ -1,0 +1,13 @@
+﻿using System.ComponentModel.DataAnnotations;
+
+namespace ITI_MVC.ViewModels
+{
+    public class RegisterModel
+    {
+        [Required]
+        public string UserName { get; set; }
+        [Required, DataType(DataType.Password)]
+        public string Password { get; set; }
+        public string Email { get; set; }
+    }
+}

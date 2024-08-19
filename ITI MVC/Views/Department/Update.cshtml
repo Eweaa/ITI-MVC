@@ -1,0 +1,17 @@
+﻿@model Department
+
+<form method="post">
+
+    @* <div class="mb-3">
+        <label for="Id" class="form-label">Id</label>
+        <input type="text" class="form-control" name="Id" id="Id" value="@Model.DepartmentID" disabled>
+    </div> *@
+
+    <div class="mb-3">
+        <label asp-for="Name" class="form-label">Name</label>
+        <input type="text" class="form-control" asp-for="Name">
+    </div>
+
+    <input type="submit" class="btn btn-primary" value="Update"/>
+
+</form>
